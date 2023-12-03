@@ -2,18 +2,21 @@ body {
   margin: 0;
 }
 
+body {
+  margin: 0;
+}
+
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: rgba(245, 245, 245, 0.3);
-    background-image: url('../../imgs/background.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 117.5vh; 
+  background-color: rgba(245, 245, 245, 0.3);
+  background-image: url('../../imgs/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
   .login-form {
     border-radius: 10px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
