@@ -4,8 +4,6 @@ import { Line, Bar } from 'react-chartjs-2';
 import 'chart.js/auto';
 import axios from 'axios';
 import './Dashboard.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 const Dashboard = () => {
     
@@ -209,10 +207,7 @@ const Dashboard = () => {
                  <p>{shopReviews.length} Reviews making { } 
               
                     { averageRating.toFixed(2)}
-                    <FontAwesomeIcon
-                    icon={faStar}
-                    style={{color: 'b08504',marginLeft: '5px' }}
-                    />
+                    <i class="fa-solid fa-star" style={{color: 'b08504',marginLeft: '5px'}}></i>
                 </p>
                 <Bar data={shopReviewsData} options={chartOptions}/>
             </div>
