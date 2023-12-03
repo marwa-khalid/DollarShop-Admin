@@ -1,0 +1,18 @@
+html {
+  zoom: 85%;
+}
+
+.app {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.content {
+  flex: 1;
+  background-color: #f4f4f4; 
+  height: auto;
+  overflow-y: auto;
+}
