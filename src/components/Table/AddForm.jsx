@@ -18,7 +18,7 @@ const AddForm = ({ onClose }) => {
 
   const fetchCategories = async () => {
    
-      await axios.get("http://localhost:5000/api/categories")
+      await axios.get("https://dollarwala-server-production.up.railway.app/api/categories")
       .then((response)=>{
         setCategories(response.data);
       })
@@ -43,7 +43,7 @@ const AddForm = ({ onClose }) => {
 
   const handleDeleteCategory = async (categoryId) => {
     if (window.confirm("Are you sure you want to delete this category and associated products?")) {
-        await axios.delete(`http://localhost:5000/api/categories/${categoryId}`)
+        await axios.delete(`https://dollarwala-server-production.up.railway.app/api/categories/${categoryId}`)
         .then((response)=>{
           fetchCategories();
           window.alert(response.data.message)
@@ -56,7 +56,7 @@ const AddForm = ({ onClose }) => {
 
   const handleAddCategory = async () => {
     
-      axios.post("http://localhost:5000/api/categories", { category: newCategory },
+      axios.post("https://dollarwala-server-production.up.railway.app/api/categories", { category: newCategory },
       {
       headers: {
           "Content-Type": "application/json",
@@ -88,7 +88,7 @@ const AddForm = ({ onClose }) => {
       formData.append("categories", selectedCategory);
 
 
-      const response = await fetch("http://localhost:5000/api/products", {
+      const response = await fetch("https://dollarwala-server-production.up.railway.app/api/products", {
         method: "POST",
         body: formData,
       });

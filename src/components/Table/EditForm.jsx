@@ -22,7 +22,7 @@ const EditProductModal = ({ onClose, productId }) => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/products/${productId}`);
+      const response = await axios.get(`https://dollarwala-server-production.up.railway.app/api/products/${productId}`);
       const product = response.data;
 
       setProductTitle(product.title);
@@ -39,7 +39,7 @@ const EditProductModal = ({ onClose, productId }) => {
 
   const fetchCategories = async () => {
    
-    await axios.get("http://localhost:5000/api/categories")
+    await axios.get("https://dollarwala-server-production.up.railway.app/api/categories")
     .then((response)=>{
       setCategories(response.data);
     })
@@ -55,7 +55,7 @@ const EditProductModal = ({ onClose, productId }) => {
 
   const handleAddCategory = async () => {
     
-      axios.post("http://localhost:5000/api/categories", { category: newCategory },
+      axios.post("https://dollarwala-server-production.up.railway.app/api/categories", { category: newCategory },
       {
       headers: {
           "Content-Type": "application/json",
@@ -94,7 +94,7 @@ const EditProductModal = ({ onClose, productId }) => {
     };
 
     console.log(data)
-    axios.put(`http://localhost:5000/api/products/${productId}`, formData, {
+    axios.put(`https://dollarwala-server-production.up.railway.app/api/products/${productId}`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       }
@@ -161,7 +161,7 @@ const EditProductModal = ({ onClose, productId }) => {
                     <>
                       Selected file:
                       <img
-                        src={`http://localhost:5000/${productImage}`}
+                        src={`https://dollarwala-server-production.up.railway.app/${productImage}`}
                         alt="Selected Image"
                         style={{ maxWidth: '50px', maxHeight: '50px' }}
                       />

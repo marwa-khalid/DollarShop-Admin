@@ -21,7 +21,7 @@ const ProductsTable = () => {
   const handleDelete = async (productId) => {
     
     try {
-      const response = await axios.delete(`http://localhost:5000/api/products/${productId}`);
+      const response = await axios.delete(`https://dollarwala-server-production.up.railway.app/api/products/${productId}`);
       console.log("product deleted successfully");
       await fetchProducts();
     } catch (error) {
@@ -35,7 +35,7 @@ const ProductsTable = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/products"); 
+      const response = await fetch("https://dollarwala-server-production.up.railway.app/api/products"); 
       const data = await response.json();
 
       const productList = data.map((product) => ({
@@ -44,7 +44,7 @@ const ProductsTable = () => {
         price: product.price,
         description: product.description,
         quantity: product.quantity,
-        image: `http://localhost:5000/${product.image}`,
+        image: `https://dollarwala-server-production.up.railway.app/${product.image}`,
         category: product.category,
       }));
       setProductList(productList);

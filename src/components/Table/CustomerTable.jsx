@@ -32,7 +32,7 @@ export default function BasicTable() {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/users/"); 
+      const response = await fetch("https://dollarwala-server-production.up.railway.app/api/users/"); 
       const data = await response.json();
       setUserList(data);
     } catch (error) {
@@ -51,7 +51,7 @@ export default function BasicTable() {
   const handleApprove = async (userId) => {
     try {
       const status = "approved"
-      const response = await axios.put(`http://localhost:5000/api/users/${userId}/approve`, { status });
+      const response = await axios.put(`https://dollarwala-server-production.up.railway.app/api/users/${userId}/approve`, { status });
       await fetchUsers();
       console.log("Status updated successfully");
     } catch (error) {
@@ -61,7 +61,7 @@ export default function BasicTable() {
 
   const handleDelete = async (userId) => {
     try {
-      const response = await axios.delete(`http://localhost:5000/api/users/${userId}`);
+      const response = await axios.delete(`https://dollarwala-server-production.up.railway.app/api/users/${userId}`);
       console.log("User deleted successfully");
       await fetchUsers();
     } catch (error) {
