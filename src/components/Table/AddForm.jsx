@@ -56,7 +56,7 @@ const AddForm = ({ onClose }) => {
 
   const handleAddCategory = async () => {
     
-      axios.post("http://lcoalhost:5000/api/categories", { category: newCategory },
+      axios.post("https://dollarwala-server-production.up.railway.app/api/categories", { category: newCategory },
       {
       headers: {
           "Content-Type": "application/json",
