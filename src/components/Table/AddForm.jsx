@@ -92,13 +92,14 @@ const AddForm = ({ onClose }) => {
       )
       .then((response)=>{
         onClose();
+        window.alert(response.data.message);
       })
       .catch((error)=>{
-        window.alert(error);
+        window.alert(error.response.data.message);
       })
         
     } catch (error) {
-      console.error("Error submitting form:", error);
+      window.log(error.response.data.message);
     }
   };
 
