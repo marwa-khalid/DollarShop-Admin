@@ -33,8 +33,7 @@ export default function BasicTable() {
   const fetchUsers = async () => {
     try {
       const response = await axios.get("https://dollarwala-server-production.up.railway.app/api/users/"); 
-      const data = await response.json();
-      setUserList(data);
+      setUserList(response.data);
     } catch (error) {
       console.error("Error fetching users:", error);
     }
