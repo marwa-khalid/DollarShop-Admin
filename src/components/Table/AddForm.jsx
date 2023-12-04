@@ -88,16 +88,15 @@ const AddForm = ({ onClose }) => {
       formData.append("categories", selectedCategory);
 
 
-      const response = await fetch("https://dollarwala-server-production.up.railway.app/api/products", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (response.ok) {
+      await axios.post("https://dollarwala-server-production.up.railway.app/api/products", formData,
+      )
+      .then((response)=>{
         onClose();
-      } else {
-        console.error("Error submitting form:", response.statusText);
-      }
+      })
+      .catch((error)=>{
+        window.alert(error);
+      })
+        
     } catch (error) {
       console.error("Error submitting form:", error);
     }

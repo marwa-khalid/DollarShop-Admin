@@ -35,7 +35,7 @@ const ProductsTable = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch("https://dollarwala-server-production.up.railway.app/api/products"); 
+      const response = await axios.get("https://dollarwala-server-production.up.railway.app/api/products"); 
       const data = await response.json();
 
       const productList = data.map((product) => ({
