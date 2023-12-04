@@ -67,7 +67,7 @@ const AddForm = ({ onClose }) => {
           setNewCategory("");
         })
         .catch((error)=>{
-          window.alert("Error adding category: ",error.response.data.message);
+          window.alert(error.response.data.message);
         })
   };
 
@@ -92,13 +92,16 @@ const AddForm = ({ onClose }) => {
       )
       .then((response)=>{
         onClose();
+        console.log("hi")
         window.alert(response.data.message);
       })
       .catch((error)=>{
+        console.log(error.response.data.message)
         window.alert(error.response.data.message);
       })
         
     } catch (error) {
+      console.log(error)
       window.log(error.response.data.message);
     }
   };
