@@ -169,7 +169,7 @@ const ProductsTable = () => {
     rowsPerPageOptions: [10, 25, 50],
     customToolbar: () => {
       return ( 
-          <button onClick={handleOpenModal}>Add</button>          
+          <button id="add" onClick={handleOpenModal}>Add</button>          
       );
     },
   };
