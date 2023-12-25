@@ -21,7 +21,7 @@ const ProductsTable = () => {
   const handleDelete = async (productId) => {
     
     try {
-      const response = await axios.delete(`https://dollarwala-server-production.up.railway.app/api/products/${productId}`);
+      const response = await axios.delete(`https://dollar-wala-server.vercel.app/api/products/${productId}`);
       console.log("product deleted successfully");
       await fetchProducts();
     } catch (error) {
@@ -35,7 +35,7 @@ const ProductsTable = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get("https://dollarwala-server-production.up.railway.app/api/products"); 
+      const response = await axios.get("https://dollar-wala-server.vercel.app/api/products"); 
       const data = response.data;
 
       const productList = data.map((product) => ({
@@ -44,7 +44,7 @@ const ProductsTable = () => {
         price: product.price,
         description: product.description,
         quantity: product.quantity,
-        image: `https://dollarwala-server-production.up.railway.app/${product.image}`,
+        image: `https://dollar-wala-server.vercel.app/${product.image}`,
         category: product.category,
       }));
       setProductList(productList);

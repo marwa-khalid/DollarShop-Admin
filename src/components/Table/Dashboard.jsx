@@ -26,7 +26,7 @@ const Dashboard = () => {
   
     const fetchOrderDetails = async () => {
         try {
-        const response = await axios.get("https://dollarwala-server-production.up.railway.app/api/orders/all");
+        const response = await axios.get("https://dollar-wala-server.vercel.app/api/orders/all");
         const filteredOrders = response.data.filter(order => {
             return (
             order.status !== "cancelled"
@@ -57,7 +57,7 @@ const Dashboard = () => {
     const fetchShopReviews = async () => {
 
         try {
-            const response = await axios.get(`https://dollarwala-server-production.up.railway.app/api/ShopReviews`);
+            const response = await axios.get(`https://dollar-wala-server.vercel.app/api/ShopReviews`);
             const reviewData = response.data;
             setShopReviews(reviewData);
             const totalRating = reviewData.reduce((sum, review) => sum + review.rating, 0);
@@ -81,7 +81,7 @@ const Dashboard = () => {
 
     const fetchUsers = async () =>{
         try{
-            const response = await axios.get(`https://dollarwala-server-production.up.railway.app/api/users`);
+            const response = await axios.get(`https://dollar-wala-server.vercel.app/api/users`);
             const usersData = response.data;
             setUsers(usersData);
         } catch (error) {

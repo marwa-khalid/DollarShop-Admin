@@ -14,7 +14,7 @@ const OrdersTable = () => {
   }, [orders]);
 
   const fetchOrders = () =>{
-    axios.get(`https://dollarwala-server-production.up.railway.app/api/orders/all`)
+    axios.get(`https://dollar-wala-server.vercel.app/api/orders/all`)
       .then(response => {
         setOrders(response.data); 
       })
@@ -51,7 +51,7 @@ const OrdersTable = () => {
     const status = "dispatched";
     const productId = selectedOrder._id;
     console.log(productId)
-    axios.put(`https://dollarwala-server-production.up.railway.app/api/orders/${productId}`, { status }, {
+    axios.put(`https://dollar-wala-server.vercel.app/api/orders/${productId}`, { status }, {
       headers: {
         'Content-Type': 'application/json', 
       },
@@ -102,7 +102,7 @@ const OrdersTable = () => {
               <div key={index} style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
                 <div style={{ position: 'relative' }}>
                   <img
-                    src={`https://dollarwala-server-production.up.railway.app/${product.image}`}
+                    src={`https://dollar-wala-server.vercel.app/${product.image}`}
                     alt={product.title}
                     style={{ width: "40px", height: "40px" }}
                   />

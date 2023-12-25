@@ -18,7 +18,7 @@ const AddForm = ({ onClose }) => {
 
   const fetchCategories = async () => {
    
-      await axios.get("https://dollarwala-server-production.up.railway.app/api/categories")
+      await axios.get("https://dollar-wala-server.vercel.app/api/categories")
       .then((response)=>{
         setCategories(response.data);
       })
@@ -43,7 +43,7 @@ const AddForm = ({ onClose }) => {
 
   const handleDeleteCategory = async (categoryId) => {
     if (window.confirm("Are you sure you want to delete this category and associated products?")) {
-        await axios.delete(`https://dollarwala-server-production.up.railway.app/api/categories/${categoryId}`)
+        await axios.delete(`https://dollar-wala-server.vercel.app/api/categories/${categoryId}`)
         .then((response)=>{
           fetchCategories();
           window.alert(response.data.message)
@@ -56,7 +56,7 @@ const AddForm = ({ onClose }) => {
 
   const handleAddCategory = async () => {
     
-      axios.post("https://dollarwala-server-production.up.railway.app/api/categories", { category: newCategory },
+      axios.post("https://dollar-wala-server.vercel.app/api/categories", { category: newCategory },
       {
       headers: {
           "Content-Type": "application/json",
@@ -88,7 +88,7 @@ const AddForm = ({ onClose }) => {
       formData.append("categories", selectedCategory);
 
 
-      await axios.post("https://dollarwala-server-production.up.railway.app/api/products", formData,
+      await axios.post("https://dollar-wala-server.vercel.app/api/products", formData,
       )
       .then((response)=>{
         onClose();

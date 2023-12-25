@@ -32,7 +32,7 @@ export default function BasicTable() {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get("https://dollarwala-server-production.up.railway.app/api/users/"); 
+      const response = await axios.get("https://dollar-wala-server.vercel.app/api/users/"); 
       setUserList(response.data);
     } catch (error) {
       console.error("Error fetching users:", error);
@@ -50,7 +50,7 @@ export default function BasicTable() {
   const handleApprove = async (userId) => {
     try {
       const status = "approved"
-      const response = await axios.put(`https://dollarwala-server-production.up.railway.app/api/users/${userId}/approve`, { status });
+      const response = await axios.put(`https://dollar-wala-server.vercel.app/api/users/${userId}/approve`, { status });
       await fetchUsers();
       console.log("Status updated successfully");
     } catch (error) {
@@ -60,7 +60,7 @@ export default function BasicTable() {
 
   const handleDelete = async (userId) => {
     try {
-      const response = await axios.delete(`https://dollarwala-server-production.up.railway.app/api/users/${userId}`);
+      const response = await axios.delete(`https://dollar-wala-server.vercel.app/api/users/${userId}`);
       console.log("User deleted successfully");
       await fetchUsers();
     } catch (error) {

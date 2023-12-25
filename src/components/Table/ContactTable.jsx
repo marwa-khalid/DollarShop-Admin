@@ -5,7 +5,7 @@ export default function BasicTable() {
   const [contact, setContact] = useState([]);
 
 useEffect(() => {
-  axios.get(`https://dollarwala-server-production.up.railway.app/api/Contact/`)
+  axios.get(`https://dollar-wala-server.vercel.app/api/Contact/`)
     .then(response => {
       setContact(response.data); 
     })

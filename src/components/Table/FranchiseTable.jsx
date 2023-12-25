@@ -17,7 +17,7 @@ export default function BasicTable() {
   }, [franchise]);
 
   const fetchFranchises = () => {
-    axios.get(`https://dollarwala-server-production.up.railway.app/api/franchise`)
+    axios.get(`https://dollar-wala-server.vercel.app/api/franchise`)
     .then(response => {
       setFranchise(response.data); 
     })
@@ -29,7 +29,7 @@ export default function BasicTable() {
   const sendEmail = (email,action,franchiseId) => {
    console.log(email)
    console.log(action)
-    axios.post('https://dollarwala-server-production.up.railway.app/api/franchise/sendemail', { email, action, franchiseId })
+    axios.post('https://dollar-wala-server.vercel.app/api/franchise/sendemail', { email, action, franchiseId })
       .then(response => {
         console.log(response.data);
       })
